@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <title>Angular 4</title>
+</head>
+<body>
+    <div ng-app="" ng-init="names=[
+                                    {FirstName:'Sathish',LastName:'Rajagopalan',DOB:'03/05/1972'},
+                                    {FirstName:'Sharmista',LastName:'Sathish',DOB:'09/09/2005'},
+                                    {FirstName:'Sharvani',LastName:'Sathish',DOB:'30/12/2009'},
+                                    {FirstName:'Sakthi',LastName:'Morekonda',DOB:'01/03/1978'}]">
+        <table>
+            <tr ng-repeat ="namedata in names">
+                <td>{{namedata.FirstName}}</td>
+                <td>{{namedata.LastName}}</td>
+                <td>{{namedata.DOB}}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

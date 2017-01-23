@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <title></title>
+
+    <script>
+
+        var app = angular.module("myApp", []);
+
+
+        app.run(function ($rootScope) {
+            $rootScope.CurrentColour = "Red";
+        });
+
+        app.controller("myCtrl", function ($scope) {
+            $scope.CurrentColour = "Light Blue";
+        });
+
+    </script>
+</head>
+
+    <body ng-app="myApp">
+        <p>The rootScope colour :</p><h1>{{CurrentColour}}</h1>
+
+        <div ng-controller="myCtrl">
+            Current colour : {{CurrentColour}}
+        </div>
+
+        <p>rootScope colour: {{CurrentColour}}</p>
+
+    </body>
+
+
+</html>

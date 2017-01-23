@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <title></title>
+
+    <script>
+        var app = angular.module("myApp", []);
+
+        app.controller("personController", function($scope)
+        {
+
+            $scope.EmpNames = ['Sathish', 'Sharvani','Sharmista', 'Sakthi', 'Arvind'];
+            $scope.Names = [{firstName:'Sathish', lastName: 'Rajagopalan'},{firstName: 'Sharmista', lastName:'Sathish'},{firstName: 'Sharvani', lastName: 'Sathish'}]
+
+            $scope.FirstName = "Sathish"
+            $scope.LastName = "Rajagopalan"
+        });
+    </script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="personController">
+
+        <p><input type="text" ng-model="empName"/> </p>
+
+        <ul>
+            <li ng-repeat="name in EmpNames | filter: empName">
+                {{name | uppercase}}
+            </li>
+        </ul>
+
+        <ul>
+            <li ng-repeat="name in Names">
+                {{name.firstName}},{{name.lastName | uppercase}}
+            </li>
+        </ul>
+
+        <p>This name is {{FirstName | lowercase}} {{LastName | uppercase}}</p>
+    </div>
+</body>
+</html>

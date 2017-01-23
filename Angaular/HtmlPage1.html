@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<title>Angular 1</title>
+    <script>
+        var app = angular.module("myApp", []);
+
+        app.controller("myCtrl", function ($scope) {
+            $scope.FirstName = "Sharmista1";
+            $scope.LastName = "Sathish1";
+            $scope.DOB = "09/09/2005"
+            $scope.myCol = "lightblue"
+            $scope.MonthlySalary = 12000
+        });
+
+
+        function CheckDateValue()
+        {
+
+            var dateval = $("#txtDate").val();
+
+            var starts = $("#txtDate").val();
+            var match = /(\d+)\/(\d+)\/(\d+)/.exec(starts)
+            var datevale = new Date(match[3], match[2], match[1]);
+            alert(datevale)
+
+            var dateupdate = new Date($("#txtDate").val());
+
+            //alert(datevale)
+
+            var dd = datevale.getDate();
+            var mm = datevale.getMonth() ;
+            var yy = datevale.getFullYear();
+
+            alert(dd)
+            alert(mm)
+            alert(yy)
+
+            var newdate = dd + "/" + mm + "/" + yy;
+
+            alert(new Date(newdate))
+        }
+    </script>
+</head>
+<body>
+
+    <p><input type="text" id="txtDate" /></p>
+
+    <div ng-app="myApp" ng-controller="myCtrl" >
+        <p><input type="text" ng-model="FirstName" style="background-color:{{myCol}}" /></p>
+        <p><input type="text" ng-model="LastName" /></p>
+        <p><input type="text" ng-model="DOB" id="txtDOB"   /></p>
+        <p>Monthly salary: $<span ng-bind="MonthlySalary" /></p>
+        <p>Annual slary: $<span ng-bind="MonthlySalary * 12" /></p>
+
+        <p><input type = "button" onclick = "CheckDateValue()" value="Check Date value" /></p>
+
+        <p>Welcome {{FirstName + " " + LastName}} and wish you many more happy returns of day on your birthday {{DOB}}</p>
+
+    </div>
+</body>
+</html>

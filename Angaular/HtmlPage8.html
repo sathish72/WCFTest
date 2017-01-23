@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <title></title>
+    <script>
+
+        var app = angular.module("myApp", []);
+
+        app.controller("myCtrl", function ($scope) {
+            $scope.FirstName = "Peter"
+            $scope.LastName = "Jayapandian"
+
+            $scope.changeName = function () {
+                $scope.FirstName = "Jacob Chandrasekar"
+            };
+
+            $scope.changeLastName = function () {
+                $scope.LastName = "Jesupaul Thangaraj"
+            };
+        });
+
+    </script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <h1 ng-click="changeName()">{{FirstName}}</h1>
+        <h2 ng-dblclick="changeLastName()">{{LastName}}</h2>
+    </div>
+</body>
+</html>

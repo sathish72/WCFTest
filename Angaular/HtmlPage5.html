@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <title>Angular 5</title>
+
+    <script>
+        var app = angular.module("myApp", []);
+
+        app.directive("w2TestDirective", function () {
+            return
+            {
+                template: "<h1><u>Sathish directive</u></h1>"
+            }
+        });
+
+
+        app.directive("w3TestDirective", function () {
+
+            return {
+                template: "<h1>Made by a directive</h1>"
+            }
+        });
+
+
+
+
+    </script>
+</head>
+<body>
+    <div ng-app="myApp">
+        <w2-test-directive></w2-test-directive>
+        <w3-test-directive></w3-test-directive>
+        
+    </div>
+</body>
+</html>
